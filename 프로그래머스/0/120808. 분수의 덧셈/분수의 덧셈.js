@@ -1,9 +1,11 @@
-function solution(numer1, denom1, numer2, denom2) {
-    let numerator = numer1 * denom2 + numer2 * denom1;
-    let denominator = denom1 * denom2;
-    
-    const gcd = (a, b) => b ? gcd(b, a % b) : a; // 재귀로 최대공약수 구하기
-    
-    let g = gcd(numerator, denominator);
-    return [numerator / g, denominator / g];
+function fnGCD(a, b){
+    return (a%b)? fnGCD(b, a%b) : b;
+}
+
+function solution(denum1, num1, denum2, num2) {
+    let denum = denum1*num2 + denum2*num1;
+    let num = num1 * num2;
+    let gcd = fnGCD(denum, num); //최대공약수
+
+    return [denum/gcd, num/gcd];
 }
