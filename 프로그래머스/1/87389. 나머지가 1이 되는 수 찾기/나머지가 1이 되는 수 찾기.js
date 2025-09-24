@@ -4,5 +4,4 @@ function solution(n) {
             return x;
         }
     }
-    return n - 1; 
 }
